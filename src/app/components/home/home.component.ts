@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { UploadEvent, UploadFile, FileSystemFileEntry } from 'ngx-file-drop';
+import * as XLSX from 'xlsx';
 
 import { NotificationService } from '../../services/notification.service';
+import { DetailService } from '../../services/detail.service';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +18,7 @@ export class HomeComponent implements OnInit {
   fileName:string;
   imgSelected = false;
 
-  constructor(private notification:NotificationService, private router:Router) { }
+  constructor(private notification:NotificationService, private router:Router, private detail:DetailService) { }
 
   ngOnInit() {
   }
@@ -35,7 +37,6 @@ export class HomeComponent implements OnInit {
 		})
 	}
   }
-
 
   validateFile(file:File):void {
 	if(file.name.split('.')[1] != 'xlsx') {
@@ -69,6 +70,31 @@ export class HomeComponent implements OnInit {
   }
 
   begin() {
+	let reader = new FileReader();
+	let workbook;
+	reader.onloadend = e => {
+		// extracting the names from the uploaded excel file
+		let result = reader.result as ArrayBuffer;
+		let data = new Uint8Array(result);
+		workbook = XLSX.read(data, {type:'array'});
+		this.generateNames(workbook['Strings']);
+	};	
+	reader.readAsArrayBuffer(this.file);
 	this.router.navigate(['/dashboard']);
+  }
+
+  generateNames(names:any) {
+	for(let iter in names) {
+
+		let value = names[iter]['h'];
+		if(value == undefined) {
+			continue;
+		}
+
+		value = value.trim();
+		if(value != "name") {
+			this.detail.names.push(value);
+		}
+	}
   }
 }
