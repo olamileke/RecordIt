@@ -1,0 +1,7 @@
+
+.container-fluid
+{
+    height:100vh;
+    background:url('/assets/images/Home/low_contrast_linen.png');
+    overflow:hidden;
+}

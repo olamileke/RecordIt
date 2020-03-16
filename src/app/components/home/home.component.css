@@ -5,12 +5,16 @@
     overflow:hidden;
 }
 
+.upload-container, .upload-parent
+{
+    width:450px;
+    height:165px;
+}
+
 .upload-container
 {
     position: relative;
     top:-4vh;
-    width:450px;
-    height:165px;
     background:rgba(0,0,0,0.15);
     border-radius:12px;
     border:1px solid rgba(255, 255, 255, 0.07);
@@ -26,7 +30,32 @@
     font-size:0.9em;
 }
 
+
+.file-drop
+{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+}
+
 .browse-button
 {
     cursor: pointer;
+}
+
+@media(max-width:500px)
+{
+    .upload-container, .upload-parent
+    {
+        width:350px;
+    }
+}
+
+@media(max-width:370px)
+{
+    .upload-container, .upload-parent
+    {
+        width:315px;
+    }
 }
