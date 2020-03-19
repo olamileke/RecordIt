@@ -8,12 +8,20 @@ import { FileDropModule } from 'ngx-file-drop';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { AllComponent } from './components/all/all.component';
+import { SearchComponent } from './components/search/search.component';
+import { CompileComponent } from './components/compile/compile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    SidebarComponent,
+    AllComponent,
+    SearchComponent,
+    CompileComponent
   ],
   imports: [
     BrowserModule,

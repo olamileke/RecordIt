@@ -1,0 +1,29 @@
+:host
+{
+    height:100%;
+}
+
+.sidebar-main
+{
+    background:rgba(0,0,0,0.35);
+    height:100%;
+    font-family:'Quicksand', sans-serif;
+}
+
+.options-parent
+{
+    position:relative;
+    top:-9vh;
+}
+
+li
+{
+    cursor:pointer;
+    transition:background 0.22s ease-in;
+}
+
+li.active
+{
+    background:rgb(7, 87, 60);
+    border-radius:4px;
+}

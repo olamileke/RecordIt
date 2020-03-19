@@ -16,11 +16,19 @@ export class HomeComponent implements OnInit {
   @ViewChild('file') fileInput;
   file:File;
   fileName:string;
-  imgSelected = false;
+  fileUpoaded = false;
 
   constructor(private notification:NotificationService, private router:Router, private detail:DetailService) { }
 
   ngOnInit() {
+		this.setVariables();
+  }
+
+  setVariables():void {
+	if(this.detail.fileUploaded) {
+		this.fileUpoaded = this.detail.fileUploaded;
+		this.fileName = this.detail.fileName;
+	}
   }
 
   browse():void {
@@ -51,25 +59,12 @@ export class HomeComponent implements OnInit {
 
 	this.file = file;
 	this.fileName = this.formatName(this.file.name);
-	this.imgSelected = !this.imgSelected;
+	this.fileUpoaded = !this.fileUpoaded;
+	this.detail.fileUploaded = true;
+	this.formatXLSXToArray();
   }
   
-  
-  formatName(name:string):string {
-	
-	if(name.length > 25) {
-		return name.slice(0,23) + '...';		
-	}
-
-	return name;
-  }
-
-  removeFile():void {
-	  this.fileName = '';
-	  this.imgSelected = !this.imgSelected;
-  }
-
-  begin() {
+  formatXLSXToArray() {
 	let reader = new FileReader();
 	let workbook;
 	reader.onloadend = e => {
@@ -80,6 +75,25 @@ export class HomeComponent implements OnInit {
 		this.generateNames(workbook['Strings']);
 	};	
 	reader.readAsArrayBuffer(this.file);
+  }
+  
+  formatName(name:string):string {
+	if(name.length > 25) {
+		this.detail.fileName = name.slice(0,23) + '...';
+		return name.slice(0,23) + '...';		
+	}
+
+	this.detail.fileName = name;
+	return name;
+  }
+
+  removeFile():void {
+	  this.fileName = '';
+	  this.fileUpoaded = !this.fileUpoaded;
+	  this.detail.clear();
+  }
+
+  begin() {
 	this.router.navigate(['/dashboard']);
   }
 

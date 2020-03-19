@@ -1,0 +1,43 @@
+
+.all-parent
+{
+    font-family:'Quicksand', sans-serif;
+}
+
+.all-stats, .records-container
+{
+    background:rgba(0,0,0,0.25);
+}
+
+.all-stats
+{
+    font-size:1.02em;
+}
+
+.records-container
+{
+    height:65vh;
+    overflow-y: scroll;
+}
+
+.records-container::-webkit-scrollbar
+{
+	width:4px;
+	background:rgba(0,0,0,0.05);
+}
+
+.records-container::-webkit-scrollbar-thumb
+{
+	background:rgba(0,0,0,0.25);
+}
+
+.records-container::-webkit-scrollbar-track
+{
+	background:rgba(0,0,0,0.01);
+}
+
+i
+{
+    cursor:pointer;
+    font-size:0.9em;
+}

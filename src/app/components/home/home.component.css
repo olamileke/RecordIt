@@ -1,7 +1,9 @@
+
 .container-fluid
 {
     height:100vh;
     background:url('/assets/images/Home/low_contrast_linen.png');
+    font-family:'Quicksand', sans-serif;
     overflow:hidden;
 }
 
@@ -28,15 +30,6 @@
     border-radius:9px;
     font-family:'Quicksand', sans-serif;
     font-size:0.9em;
-}
-
-
-.file-drop
-{
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
 }
 
 .browse-button

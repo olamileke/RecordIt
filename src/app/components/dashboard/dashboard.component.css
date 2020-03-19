@@ -5,3 +5,8 @@
     background:url('/assets/images/Home/low_contrast_linen.png');
     overflow:hidden;
 }
+
+.tabs-main
+{
+    margin-top:15vh;
+}

@@ -1,4 +1,16 @@
 
 <div class='container-fluid p-0'>
+    <div class='row' style='height:100vh;'>
+        <div class='col-2 p-0'>
+            <app-sidebar (changeTab)='switchTab($event)'></app-sidebar>
+        </div>
 
+        <div class='offset-2'></div>
+
+        <div class='col-5 tabs-main'>
+            <app-all *ngIf='tabs.all'></app-all>
+            <app-search *ngIf='tabs.search'></app-search>
+            <app-compile *ngIf='tabs.compile'></app-compile>
+        </div>
+    </div>
 </div>
