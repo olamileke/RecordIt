@@ -9,7 +9,7 @@ import { DetailService } from '../../services/detail.service'
 })
 export class AllComponent implements OnInit {
 
-  names = this.detail.names;
+  data = this.detail.data;
   constructor(private detail:DetailService) { }
 
   ngOnInit() {

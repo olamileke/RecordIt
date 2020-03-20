@@ -1,0 +1,65 @@
+
+.search-container
+{
+    font-family:'Quicksand', sans-serif;
+}
+
+.search-term-parent
+{
+    background:rgba(0,0,0,0.25);
+    position: relative;
+}
+
+input
+{
+    background:transparent;
+    outline:none;
+    border-color:transparent;
+    border-bottom:1px solid #fff;
+    color:#fff;
+    /* padding-left:30px; */
+}
+
+::-webkit-input-placeholder
+{
+    color:#fff;
+}
+
+
+.fa-search-minus
+{
+    position:absolute;
+    top:20px;
+    left:17px;
+    color:#fff;
+    font-size:1.2em;
+}
+
+.search-results
+{
+    background:rgba(0,0,0,0.25);
+    height:65vh;
+    overflow-y: scroll;
+}
+
+.search-results::-webkit-scrollbar
+{
+	width:4px;
+	background:rgba(0,0,0,0.05);
+}
+
+.search-results::-webkit-scrollbar-thumb
+{
+	background:rgba(0,0,0,0.25);
+}
+
+.search-results::-webkit-scrollbar-track
+{
+	background:rgba(0,0,0,0.01);
+}
+
+i
+{
+    color:#fff;
+    font-size:1.2em;
+}

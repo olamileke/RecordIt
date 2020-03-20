@@ -95,20 +95,16 @@ export class HomeComponent implements OnInit {
 
   begin() {
 	this.router.navigate(['/dashboard']);
+	this.detail.createDataStructure();
   }
 
   generateNames(names:any) {
-	for(let iter in names) {
 
-		let value = names[iter]['h'];
-		if(value == undefined) {
-			continue;
+	this.detail.names = names.map(name => {
+		let value = name['h'];
+		if(value.trim() != "name" && value.trim() != "names") {
+			return value.trim()
 		}
-
-		value = value.trim();
-		if(value != "name") {
-			this.detail.names.push(value);
-		}
-	}
+	}).filter(name => { return name != undefined });
   }
 }

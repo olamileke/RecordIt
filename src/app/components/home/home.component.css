@@ -37,6 +37,18 @@
     cursor: pointer;
 }
 
+.fa-info-circle
+{
+    font-size:2em;
+    position:fixed;
+    bottom:4vh;
+    right:6vh;
+    cursor:pointer;
+    z-index:9999;
+    color:#fff;
+}
+
+
 @media(max-width:500px)
 {
     .upload-container, .upload-parent

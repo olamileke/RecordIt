@@ -1,12 +1,13 @@
 
 <div class='all-parent text-white'>
 	<div class='all-stats px-4 py-3 mb-3'>
-		{{ names.length }} Stewards
+		{{ data.length }} Stewards
 	</div>
 	<div class='records-container py-3 px-4'>
-		<div *ngFor='let name of names' class='d-flex justify-content-between align-items-center mb-3'>
-			<p class='m-0'>{{ name }}</p>
-			<i class='fa fa-check'></i>
+		<div *ngFor='let record of data' class='d-flex justify-content-between align-items-center mb-3'>
+			<p class='m-0'>{{ record.name }}</p>
+			<i class='fa fa-check-circle' *ngIf='record.status'></i>
+			<i class='fa fa-times-circle' *ngIf='!record.status'></i>
 		</div>
 	</div>
 </div>

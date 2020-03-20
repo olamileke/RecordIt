@@ -7,6 +7,7 @@ export class DetailService {
     fileUploaded:boolean = false;
     fileName:string;
     names = [];
+    data = [];
     dt = new Date();
 
     clear() {
@@ -21,5 +22,12 @@ export class DetailService {
         let year = this.dt.getFullYear();
 
         return `${date}/${month}/${year}`;
+    }
+
+
+    createDataStructure():void {
+        this.data = this.names.map(name => {
+            return {name:name, status:false}
+        });
     }
 }

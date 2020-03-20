@@ -1,3 +1,16 @@
-<p>
-  search works!
-</p>
+
+<div class='search-container'>
+    <div class="search-term-parent p-3 mb-3">
+		<input class='w-100 pb-1 pl-1' placeholder="Enter name..."  (input)='find($event.target.value)' autofocus/>
+		<!-- <i class='fa fa-search-minus'></i> -->
+	</div>
+
+	<div class='search-results py-3 px-4 text-white'>
+		<div *ngFor='let record of results' class='d-flex justify-content-between align-items-center mb-3'>
+			<p class='m-0'>{{ record.name }}</p>
+			<i class='fa fa-check-circle' *ngIf='record.status'></i>
+			<i class='fa fa-times-circle' *ngIf='!record.status'></i>
+		</div>
+	</div>
+
+</div>
