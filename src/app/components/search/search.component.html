@@ -7,10 +7,10 @@
 
 	<div class='search-results py-3 px-4 text-white d-flex justify-content-center' [ngClass]="{'align-items-center':emptySearch || emptyResults, 'align-items-start':!emptySearch}">
 		<div class='w-100' *ngIf='!emptySearch && results.length > 0'>
-			<div *ngFor='let record of results' class='d-flex justify-content-between align-items-center mb-3'>
+			<div *ngFor='let record of results; index as i' class='d-flex justify-content-between align-items-center mb-3'>
 				<p class='m-0'>{{ record.name }}</p>
-				<i class='fa fa-check-circle' *ngIf='record.status' #statusIcon></i>
-				<i class='fa fa-times-circle' *ngIf='!record.status' #statusIcon></i>
+				<i class='fa fa-check-circle' *ngIf='record.status' (click)="changeStatus(i)" #statusIcon></i>
+				<i class='fa fa-times-circle' *ngIf='!record.status' (click)="changeStatus(i)" #statusIcon></i>
 			</div>
 		</div>
 

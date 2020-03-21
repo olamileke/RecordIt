@@ -1,0 +1,52 @@
+
+:host
+{
+    font-family:'Quicksand', sans-serif;
+}
+
+.add-text
+{
+    margin-top:4vh;
+}
+
+.add-text, .add-container
+{
+    background:rgba(0,0,0,0.15);
+}
+
+input
+{
+    background:transparent;
+    outline:none;
+    border-color:transparent;
+    border-bottom:1px solid #fff;
+    color:#fff;
+    padding-left:30px;
+}
+
+
+::-webkit-input-placeholder
+{
+    color:#fff;
+}
+
+button
+{
+    /* background:rgb(7, 87, 60); */
+    background:transparent;
+    outline:none;
+    color:#fff;
+    border-radius:4px;
+    border:1px solid rgba(255,255,255, 0.25);
+    cursor:pointer;
+    font-family:'Raleway', sans-serif;
+}
+
+
+i
+{
+    position: absolute;
+    top:6px;
+    left:2px;
+    color:#fff;
+}
