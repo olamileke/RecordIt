@@ -11,6 +11,9 @@ export class SearchComponent implements OnInit {
 
   data = this.detail.data;
   results = [];
+  emptySearch:boolean = true;
+  searchTerm:string;
+  emptyResults:boolean = false;
   constructor(private detail:DetailService) { }
 
   ngOnInit() {
@@ -19,8 +22,12 @@ export class SearchComponent implements OnInit {
   find(name:any):void {
 	this.results = [];
 	name = name.toLowerCase();
+	this.emptySearch = false;
+	this.emptyResults = false;
+	this.searchTerm = name;
 
 	if(name == '') {
+		this.emptySearch = true;
 		return
 	}
 
@@ -29,6 +36,9 @@ export class SearchComponent implements OnInit {
 			return record;
 		}
 	});
+
+	this.results.length == 0 ? this.emptyResults = true : this.emptyResults = false;
+	
   }
 
 }

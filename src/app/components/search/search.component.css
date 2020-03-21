@@ -6,7 +6,7 @@
 
 .search-term-parent
 {
-    background:rgba(0,0,0,0.25);
+    /* background:rgba(0,0,0,0.25); */
     position: relative;
 }
 
@@ -62,4 +62,10 @@ i
 {
     color:#fff;
     font-size:1.2em;
+}
+
+.empty-search-text
+{
+    position:relative;
+    top:-5vh;
 }

@@ -4,10 +4,10 @@
 		{{ data.length }} Stewards
 	</div>
 	<div class='records-container py-3 px-4'>
-		<div *ngFor='let record of data' class='d-flex justify-content-between align-items-center mb-3'>
+		<div *ngFor='let record of data; index as i' class='d-flex justify-content-between align-items-center mb-3'>
 			<p class='m-0'>{{ record.name }}</p>
-			<i class='fa fa-check-circle' *ngIf='record.status'></i>
-			<i class='fa fa-times-circle' *ngIf='!record.status'></i>
+			<i class='fa fa-check-circle' *ngIf='record.status' (click)="changeStatus(i)" #statusIcon></i>
+			<i class='fa fa-times-circle' *ngIf='!record.status' (click)="changeStatus(i)" #statusIcon></i>
 		</div>
 	</div>
 </div>
