@@ -1,0 +1,37 @@
+:host
+{
+    font-family:'Quicksand', sans-serif;
+}
+
+.compile-text, .compile-container
+{
+    background:rgba(0,0,0,0.15);
+}
+
+.compile-container
+{
+    height:65vh;
+    overflow-y: scroll;
+}
+
+.compile-container::-webkit-scrollbar
+{
+	width:4px;
+	background:rgba(0,0,0,0.05);
+}
+
+.compile-container::-webkit-scrollbar-thumb
+{
+	background:rgba(0,0,0,0.25);
+}
+
+.compile-container::-webkit-scrollbar-track
+{
+	background:rgba(0,0,0,0.01);
+}
+
+i
+{
+    cursor:pointer;
+    font-size:1.2em;
+}

@@ -11,6 +11,7 @@ import { NotificationService } from '../../services/notification.service';
 })
 export class DashboardComponent implements OnInit {
 
+  date = this.detail.getDateString();
   tabs = {all:true, search:false, add:false, compile:false}
   constructor(private router:Router, private detail:DetailService, private notif:NotificationService) { }
 

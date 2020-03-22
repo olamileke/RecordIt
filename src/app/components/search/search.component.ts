@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Renderer2 } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList, Renderer2 } from '@angular/core';
 
 import { DetailService } from '../../services/detail.service';
 import { NotificationService } from '../../services/notification.service';
@@ -10,7 +10,7 @@ import { NotificationService } from '../../services/notification.service';
 })
 export class SearchComponent implements OnInit {
 
-  @ViewChild('statusIcon') statusIcon;
+  @ViewChildren('statusIcon') statusIcons:QueryList<any>;
   data = this.detail.data;
   results = [];
   emptySearch:boolean = true;
@@ -43,18 +43,23 @@ export class SearchComponent implements OnInit {
 	this.results.length == 0 ? this.emptyResults = true : this.emptyResults = false;	
   }
 
-  changeStatus(index:number) {
-    if(this.statusIcon.nativeElement.classList.contains('fa-times-circle')) {
-		this.renderer.removeClass(this.statusIcon.nativeElement, 'fa-times-circle');
-		this.renderer.addClass(this.statusIcon.nativeElement, 'fa-check-circle');
+  changeStatus(name:string, index:number) {
+	let currentStatus = false;
+	let element = this.statusIcons['_results'][index].nativeElement;
+    if(element.classList.contains('fa-times-circle')) {
+		this.renderer.removeClass(element, 'fa-times-circle');
+		this.renderer.addClass(element, 'fa-check-circle');
 		this.notif.success("Marked present!");
 	}
 	else {
-		this.renderer.removeClass(this.statusIcon.nativeElement, 'fa-check-circle');
-		this.renderer.addClass(this.statusIcon.nativeElement, 'fa-times-circle');
+		this.renderer.removeClass(element, 'fa-check-circle');
+		this.renderer.addClass(element, 'fa-times-circle');
 		this.notif.success("Marked absent!");
+		currentStatus = true;
 	}
-	this.data[index]['status'] = !this.data[index]['status'];
+
+	let idx = this.detail.names.indexOf(name);
+	this.data[idx]['status'] = !this.data[idx]['status'];	
   }
 
 }

@@ -10,3 +10,17 @@
 {
     margin-top:15vh;
 }
+
+@media(max-width:991px)
+{
+    .tabs-main
+    {
+        margin-top:0;
+    }
+
+    .nav-top
+    {
+        font-family:'Quicksand', sans-serif;
+        margin:3vh 0 8vh 0;
+    }
+}

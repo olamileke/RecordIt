@@ -1,7 +1,7 @@
 
 <div class='sidebar-main d-flex justify-content-center align-items-center text-white'>
 	<ul class='list-unstyled options-parent'>
-		<p class='text-center m-0 mb-4 p-2'>{{ date }}</p>
+		<p class='text-center m-0 mb-4 p-2 d-none d-lg-inline'>{{ date }}</p>
 		<li class='text-center mb-4 p-2 active' (click)="emitChangeTab('all')" [class.active]="tabs.all">All</li>
 		<li class='text-center mb-4 p-2' (click)="emitChangeTab('search')" [class.active]="tabs.search">Quick Search</li>
 		<li class='text-center mb-4 p-2' (click)="emitChangeTab('add')" [class.active]="tabs.add">Add Steward</li>

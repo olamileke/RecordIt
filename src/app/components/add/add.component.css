@@ -16,37 +16,29 @@
 
 input
 {
-    background:transparent;
-    outline:none;
-    border-color:transparent;
-    border-bottom:1px solid #fff;
-    color:#fff;
-    padding-left:30px;
+    padding-left:15px;
 }
-
 
 ::-webkit-input-placeholder
 {
-    color:#fff;
+    color:#333;
 }
 
 button
 {
-    /* background:rgb(7, 87, 60); */
     background:transparent;
     outline:none;
     color:#fff;
     border-radius:4px;
     border:1px solid rgba(255,255,255, 0.25);
     cursor:pointer;
-    font-family:'Raleway', sans-serif;
 }
 
 
 i
 {
     position: absolute;
-    top:6px;
-    left:2px;
-    color:#fff;
+    top:12px;
+    left:8px;
+    color:#000;
 }

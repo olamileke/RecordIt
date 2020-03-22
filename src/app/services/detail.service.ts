@@ -9,6 +9,8 @@ export class DetailService {
     names = [];
     data = [];
     dt = new Date();
+    days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
+    months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     clear() {
         this.fileUploaded = false;
@@ -24,10 +26,26 @@ export class DetailService {
         return `${date}/${month}/${year}`;
     }
 
+    getDateString():string {
+        let date = this.dt.getDate();
+        let day = this.days[this.dt.getDay()];
+        let month = this.months[this.dt.getMonth()];
+        let year = this.dt.getFullYear();
+
+        return `${day} ${date} ${month}, ${year}`;
+    }
 
     createDataStructure():void {
         this.data = this.names.map(name => {
             return {name:name, status:false}
+        });
+    }
+
+    getPresent():any[] {
+        return this.data.filter(row => {
+            if(row.status) {
+                return row
+            }
         });
     }
 }
