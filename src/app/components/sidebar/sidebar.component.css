@@ -28,23 +28,8 @@ li.active
     border-radius:4px;
 }
 
-@media(max-width:991px) 
+@media(max-width:991px)
 {
-	:host
-	{
-		position:fixed;
-        top:0;
-        height:100vh;
-		left:100vw;
-        width:40vw;
-        z-index:999;
-    }
-
-    :host.active
-    {
-        left:60vw;
-    }
-    
     .sidebar-main
     {
         background:url('/assets/images/Home/low_contrast_linen.png');

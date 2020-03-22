@@ -1,17 +1,16 @@
 
 <div class='container-fluid p-0'>
-    <div class='row d-lg-none d-flex justify-content-between text-white nav-top px-3'>
-        <p class='col-auto'>{{ date }}</p>
-        <div class='mr-3'>
-            leke
+    <div class='row d-lg-none d-flex align-items-end text-white nav-top px-3 px-sm-5'>
+        <p class='ml-1 ml-sm-0 col-auto mr-auto m-0'>{{ date }}</p>
+        <div class='mr-3 nav-toggle' (click)='toggleSidebar()'>
+            <span></span>
         </div>
     </div>
 
-    <div class='row' style='height:100vh;'>
-        <div class='d-none d-lg-block col-lg-2 p-0'>
+    <div class='row content-container' [ngClass]="{'align-items-center':!tabs.add}">
+        <div class='col-lg-2 p-0 side-parent' [class.active]='displaySidebar'>
             <app-sidebar (changeTab)='switchTab($event)'></app-sidebar>
         </div>
-        <app-sidebar class='d-block d-lg-none'></app-sidebar>
 
         <div class='offset-lg-2'></div>
 

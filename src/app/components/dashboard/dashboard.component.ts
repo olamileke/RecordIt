@@ -12,6 +12,7 @@ import { NotificationService } from '../../services/notification.service';
 export class DashboardComponent implements OnInit {
 
   date = this.detail.getDateString();
+  displaySidebar:boolean = false;
   tabs = {all:true, search:false, add:false, compile:false}
   constructor(private router:Router, private detail:DetailService, private notif:NotificationService) { }
 
@@ -32,6 +33,12 @@ export class DashboardComponent implements OnInit {
 	}
 
 	this.tabs[tab] = true;
+	// Closing the sidebar immediately after click on tablets and mobile
+	screen.width < 991 ? this.displaySidebar = !this.displaySidebar : this.displaySidebar = this.displaySidebar;
+  }
+
+  toggleSidebar():void {
+	  this.displaySidebar = !this.displaySidebar;
   }
 
 }

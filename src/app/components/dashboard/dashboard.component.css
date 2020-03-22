@@ -11,6 +11,11 @@
     margin-top:15vh;
 }
 
+.content-container
+{
+    height:100vh;
+}
+
 @media(max-width:991px)
 {
     .tabs-main
@@ -18,9 +23,76 @@
         margin-top:0;
     }
 
+    .side-parent
+    {
+        position:fixed;
+        top:0;
+        height:100vh;
+		left:100vw;
+        width:40vw;
+        z-index:999;
+        transition:all 0.5s ease-out;
+    }
+
+    .side-parent.active
+    {
+        left:60vw;
+    }
+
+    .content-container
+    {
+        height:92vh;
+        display:flex;
+    }
+
     .nav-top
     {
         font-family:'Quicksand', sans-serif;
-        margin:3vh 0 8vh 0;
+        height:8vh;
+        z-index:9999;
+    }
+
+    .nav-toggle
+    {
+        width:28px;
+        z-index:9999;
+    }
+
+    .nav-toggle span,
+    .nav-toggle span:before
+    {
+        position: relative;
+        display: block;
+        height:2px;
+        background: #fff;
+    }
+
+    .nav-toggle span
+    {
+        position:relative;
+        top:-15px;
+        width:100%;
+    }
+
+     .nav-toggle span:before
+    {
+        left:25%;
+        top:12px;
+        width:65%;
+        content: '';
+        background:#fff;
+    }
+}
+
+@media(max-width:576px)
+{
+    .side-parent
+    {
+        width:60vw;
+    }
+
+    .side-parent.active
+    {
+        left:40vw;
     }
 }

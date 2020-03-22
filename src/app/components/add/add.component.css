@@ -42,3 +42,19 @@ i
     left:8px;
     color:#000;
 }
+
+@media(max-width:991px)
+{
+    .add-text
+    {
+        margin-top:20vh;
+    }
+}
+
+@media(max-width:567px)
+{
+    .add-text
+    {
+        margin-top:15vh;
+    }
+}
