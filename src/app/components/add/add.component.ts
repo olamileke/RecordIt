@@ -31,6 +31,7 @@ export class AddComponent implements OnInit {
 
 	  let row = {name:name, status:true};
 	  this.data.push(row);
+	  this.detail.names.push(name);
 	  form.get('name').setValue('');
 	  this.notif.success('Added successfully!');
   }

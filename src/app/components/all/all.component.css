@@ -6,7 +6,7 @@
 
 .all-stats, .records-container
 {
-    background:rgba(0,0,0,0.25);
+    background:rgba(0,0,0,0.15);
 }
 
 .all-stats
@@ -23,12 +23,12 @@
 .records-container::-webkit-scrollbar
 {
 	width:4px;
-	background:rgba(0,0,0,0.05);
+	background:rgba(0,0,0,0.005);
 }
 
 .records-container::-webkit-scrollbar-thumb
 {
-	background:rgba(0,0,0,0.25);
+	background:rgba(0,0,0,0.17);
 }
 
 .records-container::-webkit-scrollbar-track

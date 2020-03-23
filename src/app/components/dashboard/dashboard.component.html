@@ -6,8 +6,8 @@
             <span></span>
         </div>
     </div>
-
-    <div class='row content-container' [ngClass]="{'align-items-center':!tabs.add}">
+ 
+    <div class='row content-container' [ngClass]="{'align-items-center':checkViewPort() && !tabs.add}">
         <div class='col-lg-2 p-0 side-parent' [class.active]='displaySidebar'>
             <app-sidebar (changeTab)='switchTab($event)'></app-sidebar>
         </div>
@@ -23,4 +23,6 @@
             </div>
         </div>
     </div>
+
+    <img src='/assets/images/Compile/download.svg' alt='download-icon' class='download-icon' (click)='downloadPresent()' *ngIf='tabs.compile'>
 </div>

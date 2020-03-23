@@ -35,3 +35,9 @@ i
     cursor:pointer;
     font-size:1.2em;
 }
+
+.empty-text
+{
+    position:relative;
+    top:-5vh;
+}

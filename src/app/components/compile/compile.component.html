@@ -3,10 +3,10 @@
 	{{ presentData.length }} stewards present
 </div>
 
-<div class='compile-container py-3 px-4 text-white'>
+<div class='compile-container py-3 px-4 text-white justify-content-center align-items-center' [ngClass]="{'d-flex':presentData.length == 0}">
 	<div *ngFor='let record of presentData; index as i' class='d-flex justify-content-between align-items-center mb-3'>
 		<p class='m-0'>{{ record.name }}</p>
-		<i class='fa fa-check-circle' *ngIf='record.status'></i>
-		<i class='fa fa-times-circle' *ngIf='!record.status'></i>
+		<i class='fa fa-check-circle'></i>
 	</div>
+	<p *ngIf='presentData.length == 0' class='empty-text'>no steward marked present</p>
 </div>
