@@ -57,14 +57,10 @@ export class HomeComponent implements OnInit {
 		return;
 	}
 
-	this.file = file;
-	this.fileName = this.formatName(this.file.name);
-	this.fileUpoaded = !this.fileUpoaded;
-	this.detail.fileUploaded = true;
-	this.formatXLSXToArray();
+	this.formatXLSXToArray(file);
   }
   
-  formatXLSXToArray() {
+  formatXLSXToArray(file:File) {
 	let reader = new FileReader();
 	let workbook;
 	reader.onloadend = e => {
@@ -72,9 +68,15 @@ export class HomeComponent implements OnInit {
 		let result = reader.result as ArrayBuffer;
 		let data = new Uint8Array(result);
 		workbook = XLSX.read(data, {type:'array'});
-		this.generateNames(workbook['Strings']);
+		let sheetName = workbook['SheetNames'][0];
+		if(this.generateNames(workbook['Sheets'][sheetName])) {
+			this.file = file;
+			this.fileName = this.formatName(this.file.name);
+			this.fileUpoaded = !this.fileUpoaded;
+			this.detail.fileUploaded = true;
+		}
 	};	
-	reader.readAsArrayBuffer(this.file);
+	reader.readAsArrayBuffer(file);
   }
   
   formatName(name:string):string {
@@ -98,13 +100,25 @@ export class HomeComponent implements OnInit {
 	this.detail.createDataStructure();
   }
 
-  generateNames(names:any) {
+  generateNames(sheet:any):boolean {
+	let records:any[] = Object.values(sheet);
+	let start = records[0].split(':')[0];
+	let end = records[0].split(':')[1];
 
-	this.detail.names = names.map(name => {
-		let value = name['h'];
-		if(value.trim() != "name" && value.trim() != "names") {
-			return value.trim()
+	if(start.slice(0,1) != end.slice(0,1)) {
+		this.notification.error('Excel sheet must be single columned!');
+		return false;
+	}
+
+	this.detail.names = records.map(record => {
+		if(record.hasOwnProperty('v')) {
+			return record['v'].trim();
 		}
-	}).filter(name => { return name != undefined });
+	}).filter(name => {
+		if(name != 'name' && name != 'undefined') {
+			return name;
+		}
+	});
+	return true;
   }
 }

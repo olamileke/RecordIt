@@ -55,7 +55,7 @@ export class DashboardComponent implements OnInit {
 
   downloadPresent() {
 	let workbook:XLSX.WorkBook = {Sheets:{}, SheetNames:[]};
-	let worksheet:XLSX.WorkSheet = XLSX.utils.json_to_sheet((this.detail.getPresent()));
+	let worksheet:XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.formatPresent(this.detail.getPresent()));
 	workbook.Sheets['Present Stewards'] = worksheet;
 	workbook.SheetNames.push('Present Stewards');
 
@@ -66,12 +66,11 @@ export class DashboardComponent implements OnInit {
   }
 
   formatPresent(records:any[]):any[] {
-	let names = records.map(record => {
-		return record.name;
-	});
+	records.forEach(record => {
+		delete record.status;
+	})
 
-	console.log(names);
-	return names;
+	return records;
   }
 
 }

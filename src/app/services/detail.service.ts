@@ -42,10 +42,10 @@ export class DetailService {
     }
 
     getPresent():any[] {
-        return this.data.map(row => {
+        return this.data.filter(row => {
             if(row.status) {
-                return {name:row.name};
+                return row;
             }
         });
     }
-}
+} 

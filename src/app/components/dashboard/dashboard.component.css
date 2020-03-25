@@ -24,6 +24,13 @@
     bottom:5vh;
     right:5vh;
     cursor:pointer;
+    opacity:0;
+    transition:opacity 1s ease-out;
+}
+
+.download-icon.visible
+{
+    opacity:1;
 }
 
 @media(max-width:991px)
