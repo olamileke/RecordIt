@@ -53,9 +53,16 @@ export class DashboardComponent implements OnInit {
 	  return false;
   }
 
-  downloadPresent() {
+  downloadPresent():void {
+	let presentStewards = this.detail.getPresent();
+
+	if(presentStewards.length == 0) {
+		this.notif.error('No present stewards!');
+		return
+	}
+
 	let workbook:XLSX.WorkBook = {Sheets:{}, SheetNames:[]};
-	let worksheet:XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.formatPresent(this.detail.getPresent()));
+	let worksheet:XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.formatPresent(presentStewards));
 	workbook.Sheets['Present Stewards'] = worksheet;
 	workbook.SheetNames.push('Present Stewards');
 
