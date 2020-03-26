@@ -1,8 +1,8 @@
 
 <div class='container-fluid p-0'>
     <div class='row d-lg-none d-flex align-items-end text-white nav-top px-3 px-sm-5'>
-        <p class='ml-1 ml-sm-0 col-auto mr-auto m-0'>{{ date }}</p>
-        <div class='mr-3 nav-toggle' (click)='toggleSidebar()'>
+        <p class='ml-1 ml-sm-0 col-auto mr-auto m-0 d-none d-sm-inline'>{{ date }}</p>
+        <div class='mr-sm-3 nav-toggle' (click)='toggleSidebar()'>
             <span></span>
         </div>
     </div>
@@ -15,13 +15,13 @@
         <div class='offset-lg-2'></div>
 
         <div class='col-lg-5 row d-flex justify-content-center tabs-main ml-0'>
-            <div class='col-11 col-sm-9 col-lg-12'>
+            <div class='col-11 col-sm-9 col-lg-12'> 
                 <app-all *ngIf='tabs.all'></app-all>
                 <app-search *ngIf='tabs.search'></app-search>
                 <app-add *ngIf='tabs.add'></app-add>
                 <app-compile *ngIf='tabs.compile'></app-compile>
             </div>
-        </div>
+        </div>p
     </div>
 
     <img src='/assets/images/Compile/download.svg' alt='download-icon' [ngClass]="{'download-icon':true, 'visible':tabs.compile}" (click)='downloadPresent()'>

@@ -14,6 +14,8 @@ import { AllComponent } from './components/all/all.component';
 import { SearchComponent } from './components/search/search.component';
 import { CompileComponent } from './components/compile/compile.component';
 import { AddComponent } from './components/add/add.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { AddComponent } from './components/add/add.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    FileDropModule
+    FileDropModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -105,11 +105,23 @@
 {
     .side-parent
     {
+        left:-60vw;
         width:60vw;
     }
 
     .side-parent.active
     {
-        left:40vw;
+        left:0;
+    }
+
+    .nav-toggle
+    {
+        position:relative;
+        left:5%;
+    }
+
+    .nav-toggle span:before
+    {
+        left:5%;
     }
 }

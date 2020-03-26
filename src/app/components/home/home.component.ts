@@ -14,7 +14,6 @@ import { DetailService } from '../../services/detail.service';
 export class HomeComponent implements OnInit {
 
   @ViewChild('file') fileInput;
-  file:File;
   fileName:string;
   fileUpoaded = false;
 
@@ -70,8 +69,7 @@ export class HomeComponent implements OnInit {
 		workbook = XLSX.read(data, {type:'array'});
 		let sheetName = workbook['SheetNames'][0];
 		if(this.generateNames(workbook['Sheets'][sheetName])) {
-			this.file = file;
-			this.fileName = this.formatName(this.file.name);
+			this.fileName = this.formatName(file.name);
 			this.fileUpoaded = !this.fileUpoaded;
 			this.detail.fileUploaded = true;
 		}

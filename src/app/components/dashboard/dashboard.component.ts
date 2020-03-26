@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
   EXCEL_EXTENSION='.xlsx';
   date = this.detail.getDateNum();
   displaySidebar:boolean = false;
-  tabs = {all:true, search:false, add:false, compile:false};
+  tabs = {all:true, search:false, add:false, compile:false, error:false};
   constructor(private router:Router, private detail:DetailService, private notif:NotificationService) { }
 
   ngOnInit() {

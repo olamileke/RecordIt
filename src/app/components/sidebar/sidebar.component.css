@@ -36,3 +36,12 @@ li.active
         border-left:1px solid rgba(255,255,255,0.09);
     }
 }
+
+@media(max-width:567px)
+{
+    .sidebar-main
+    {
+        border-left-color:transparent;
+        border-right:1px solid rgba(255,255,255,0.09);
+    }
+}
