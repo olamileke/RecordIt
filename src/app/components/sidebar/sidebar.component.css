@@ -10,12 +10,6 @@
     font-family:'Quicksand', sans-serif;
 }
 
-.options-parent
-{
-    position:relative;
-    top:-3vh;
-}
-
 li
 {
     cursor:pointer;
@@ -42,6 +36,6 @@ li.active
     .sidebar-main
     {
         border-left-color:transparent;
-        border-right:1px solid rgba(255,255,255,0.09);
+        border-right:1px solid rgba(255,255,255,0.009);
     }
 }

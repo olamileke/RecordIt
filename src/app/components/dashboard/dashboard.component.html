@@ -20,9 +20,10 @@
                 <app-search *ngIf='tabs.search'></app-search>
                 <app-add *ngIf='tabs.add'></app-add>
                 <app-compile *ngIf='tabs.compile'></app-compile>
+                <app-absent *ngIf='tabs.absent'></app-absent>
             </div>
         </div>p
     </div>
 
-    <img src='/assets/images/Compile/download.svg' alt='download-icon' [ngClass]="{'download-icon':true, 'visible':tabs.compile}" (click)='downloadPresent()'>
+    <img src='/assets/images/Compile/download.svg' alt='download-icon' [ngClass]="{'download-icon':true, 'visible':tabs.compile || tabs.absent}" (click)='download()'>
 </div>

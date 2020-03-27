@@ -1,0 +1,12 @@
+
+<div class='absent-text text-white px-4 py-3 mb-3'>
+	{{ absentData.length }} stewards absent
+</div>
+
+<div class='absent-container py-3 px-4 text-white justify-content-center align-items-center' [ngClass]="{'d-flex':absentData.length == 0}">
+	<div *ngFor='let record of absentData; index as i' class='d-flex justify-content-between align-items-center mb-3'>
+		<p class='m-0'>{{ record.name }}</p>
+		<i class='fa fa-times-circle'></i> 
+	</div>
+	<p *ngIf='absentData.length == 0' class='empty-text'>no steward marked absent</p>
+</div>

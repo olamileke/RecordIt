@@ -1,0 +1,43 @@
+:host
+{
+    font-family:'Quicksand', sans-serif;
+}
+
+.absent-text, .absent-container
+{
+    background:rgba(0,0,0,0.15);
+}
+
+.absent-container
+{
+    height:65vh;
+    overflow-y: scroll;
+}
+
+.absent-container::-webkit-scrollbar
+{
+	width:4px;
+	background:rgba(0,0,0,0.05);
+}
+
+.absent-container::-webkit-scrollbar-thumb
+{
+	background:rgba(0,0,0,0.25);
+}
+
+.absent-container::-webkit-scrollbar-track
+{
+	background:rgba(0,0,0,0.01);
+}
+
+i
+{
+    cursor:pointer;
+    font-size:1.2em;
+}
+
+.empty-text
+{
+    position:relative;
+    top:-5vh;
+}

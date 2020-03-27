@@ -10,7 +10,7 @@ import { DetailService } from '../../services/detail.service';
 export class SidebarComponent implements OnInit {
   
   @Output() changeTab = new EventEmitter();
-  tabs = {all:true, search:false, compile:false, add:false};
+  tabs = {all:true, search:false, compile:false, add:false, absent:false};
   date = this.detail.getDateNum();
   constructor(private detail:DetailService) { }
 

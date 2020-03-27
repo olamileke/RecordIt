@@ -16,6 +16,7 @@ import { CompileComponent } from './components/compile/compile.component';
 import { AddComponent } from './components/add/add.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { AbsentComponent } from './components/absent/absent.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { environment } from '../environments/environment';
     AllComponent,
     SearchComponent,
     CompileComponent,
-    AddComponent
+    AddComponent,
+    AbsentComponent
   ],
   imports: [
     BrowserModule,

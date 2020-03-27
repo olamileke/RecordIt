@@ -16,6 +16,7 @@ export class DetailService {
         this.fileUploaded = false;
         this.fileName = '';
         this.names = [];
+        this.data = [];
     }
 
     getDateNum():string {
@@ -44,6 +45,14 @@ export class DetailService {
     getPresent():any[] {
         return this.data.filter(row => {
             if(row.status) {
+                return row;
+            }
+        });
+    }
+
+    getAbsent():any[] {
+        return this.data.filter(row => {
+            if(!row.status) {
                 return row;
             }
         });

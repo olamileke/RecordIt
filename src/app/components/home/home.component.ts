@@ -95,7 +95,10 @@ export class HomeComponent implements OnInit {
 
   begin() {
 	this.router.navigate(['/dashboard']);
-	this.detail.createDataStructure();
+
+	if(this.detail.data.length == 0) {
+		this.detail.createDataStructure();
+	}	
   }
 
   generateNames(sheet:any):boolean {
