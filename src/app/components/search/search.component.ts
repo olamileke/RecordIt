@@ -58,8 +58,8 @@ export class SearchComponent implements OnInit {
 		currentStatus = true;
 	}
 
-	let idx = this.detail.names.indexOf(name);
-	this.data[idx]['status'] = !this.data[idx]['status'];	
+	let idx = this.detail.data.findIndex(record => record.name == name)
+	this.detail.data[idx].status = !this.detail.data[idx].status;
   }
 
 }

@@ -42,15 +42,15 @@ export class DashboardComponent implements OnInit {
   }
 
   toggleSidebar():void {
-	  this.displaySidebar = !this.displaySidebar;
+	this.displaySidebar = !this.displaySidebar;
   }
 
   checkViewPort():boolean {
-	  if(screen.width < 991) {
-		  return true;
-	  }
+	if(screen.width < 991) {
+	    return true;
+	}
 
-	  return false;
+	return false;
   }
 
   download():void {
@@ -62,7 +62,7 @@ export class DashboardComponent implements OnInit {
 		return;
 	}
 
-	this.tabs.absent ? filename = `chaplaincy_meeting_attendance_absent_${this.detail.getDateString()}` : `chaplaincy_meeting_attendance_${this.detail.getDateString()}`;
+	this.tabs.absent ? filename = `chaplaincy_meeting_attendance_absent_${this.detail.getDateString()}` : filename = `chaplaincy_meeting_attendance_${this.detail.getDateString()}`;
 
 	let workbook:XLSX.WorkBook = {Sheets:{}, SheetNames:[]};
 	let worksheet:XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.formatDownloadData(stewards));

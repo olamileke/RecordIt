@@ -41,3 +41,11 @@ i
     position:relative;
     top:-5vh;
 }
+
+@media(max-width:567px)
+{
+    .compile-container::-webkit-scrollbar-thumb
+    {
+        background:rgba(0,0,0,0.12);
+    }
+}

@@ -4,7 +4,7 @@
 <div class='container-fluid p-0'>
 	<div class='row d-flex justify-content-center align-items-center' style='height:100%'>
 		<div class='upload-container d-flex justify-content-center align-items-center'>
-			<file-drop (onFileDrop)='evalDroppedFile($event)' *ngIf='!fileUpoaded'>
+			<file-drop (onFileDrop)='evalDroppedFile($event)' *ngIf='!fileUploaded'>
 				<div class='upload-parent d-flex justify-content-center align-items-center'>
 					<div class='upload-body p-3 d-flex justify-content-around align-items-center'>
 						<img src="/assets/images/Home/file.png" alt='file-icon'>
@@ -16,7 +16,7 @@
 					</div>
 				</div>
 			</file-drop>
-			<div class='upload-body p-3 d-flex justify-content-around align-items-center' *ngIf='fileUpoaded'>
+			<div class='upload-body p-3 d-flex justify-content-around align-items-center' *ngIf='fileUploaded'>
 				<div class='d-flex flex-column justify-content-center'>
 					<p class='m-0 mb-1'><b>{{ fileName }}</b></p>
 					<p class='text-muted m-0' style='font-size:0.9em; cursor:pointer;' (click)='removeFile()'>remove</p>

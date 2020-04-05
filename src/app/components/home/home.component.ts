@@ -15,17 +15,17 @@ export class HomeComponent implements OnInit {
 
   @ViewChild('file') fileInput;
   fileName:string;
-  fileUpoaded = false;
+  fileUploaded = false;
 
   constructor(private notification:NotificationService, private router:Router, private detail:DetailService) { }
 
   ngOnInit() {
-		this.setVariables();
+	this.setVariables();
   }
 
   setVariables():void {
 	if(this.detail.fileUploaded) {
-		this.fileUpoaded = this.detail.fileUploaded;
+		this.fileUploaded = this.detail.fileUploaded;
 		this.fileName = this.detail.fileName;
 	}
   }
@@ -70,7 +70,7 @@ export class HomeComponent implements OnInit {
 		let sheetName = workbook['SheetNames'][0];
 		if(this.generateNames(workbook['Sheets'][sheetName])) {
 			this.fileName = this.formatName(file.name);
-			this.fileUpoaded = !this.fileUpoaded;
+			this.fileUploaded = !this.fileUploaded;
 			this.detail.fileUploaded = true;
 		}
 	};	
@@ -89,7 +89,7 @@ export class HomeComponent implements OnInit {
 
   removeFile():void {
 	  this.fileName = '';
-	  this.fileUpoaded = !this.fileUpoaded;
+	  this.fileUploaded = !this.fileUploaded;
 	  this.detail.clear();
   }
 
@@ -103,8 +103,7 @@ export class HomeComponent implements OnInit {
 
   generateNames(sheet:any):boolean {
 	let records:any[] = Object.values(sheet);
-	let start = records[0].split(':')[0];
-	let end = records[0].split(':')[1];
+	let [start, end] = records[0].split(':');
 
 	if(start.slice(0,1) != end.slice(0,1)) {
 		this.notification.error('Excel sheet must be single columned!');
@@ -116,7 +115,7 @@ export class HomeComponent implements OnInit {
 			return record['v'].trim();
 		}
 	}).filter(name => {
-		if(name != 'name' && name != 'undefined') {
+		if(name != 'name' && name!= 'names' && name != 'undefined') {
 			return name;
 		}
 	});

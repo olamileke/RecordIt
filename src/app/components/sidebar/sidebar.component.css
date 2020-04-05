@@ -29,6 +29,20 @@ li.active
         background:url('/assets/images/Home/low_contrast_linen.png');
         border-left:1px solid rgba(255,255,255,0.09);
     }
+
+    .options-parent
+    {
+        position: relative;
+        top:-6vh;
+    }
+}
+
+@media(max-width:768px)
+{
+    .options-parent
+    {
+        top:0;
+    }
 }
 
 @media(max-width:567px)
@@ -36,6 +50,12 @@ li.active
     .sidebar-main
     {
         border-left-color:transparent;
-        border-right:1px solid rgba(255,255,255,0.009);
+        border-right:1px solid rgba(255,255,255,0.05);
+    }
+    
+    .options-parent
+    {
+        position: relative;
+        top:4vh;
     }
 }
