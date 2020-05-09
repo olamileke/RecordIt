@@ -10,6 +10,11 @@
     font-family:'Quicksand', sans-serif;
 }
 
+.options-parent
+{
+    position: relative;
+}
+
 li
 {
     cursor:pointer;
@@ -32,7 +37,6 @@ li.active
 
     .options-parent
     {
-        position: relative;
         top:-6vh;
     }
 }
