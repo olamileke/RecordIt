@@ -55,14 +55,14 @@ export class DashboardComponent implements OnInit {
 
   download():void {
 	let stewards:string[];
-	let filename = `chaplaincy_meeting_attendance_${this.detail.getDateString()}`;
+	let filename = `chaplaincy_meeting_attendance_${this.detail.getDateString()}.xlsx`;
 	this.tabs.compile ? stewards = this.detail.getPresent() : stewards = this.detail.getAbsent();
 	if(stewards.length == 0) {
 		this.tabs.compile ? this.notif.error('No present stewards!') : this.notif.error('No absent stewards!');
 		return;
 	}
 
-	this.tabs.absent ? filename = `chaplaincy_meeting_attendance_absent_${this.detail.getDateString()}` : filename = `chaplaincy_meeting_attendance_${this.detail.getDateString()}`;
+	this.tabs.absent ? filename = `chaplaincy_meeting_attendance_absent_${this.detail.getDateString()}.xlsx` : filename = `chaplaincy_meeting_attendance_${this.detail.getDateString()}.xlsx`;
 
 	let workbook:XLSX.WorkBook = {Sheets:{}, SheetNames:[]};
 	let worksheet:XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.formatDownloadData(stewards));
