@@ -1,4 +1,13 @@
 
+@-moz-document url-prefix()
+{
+    .firefox__font
+    {
+        font-weight:normal;
+    }
+}
+
+
 file-drop .ngx-file-drop__drop-zone
 {
     border-color:transparent !important;

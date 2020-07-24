@@ -9,7 +9,7 @@
 					<div class='upload-body p-3 d-flex justify-content-around align-items-center'>
 						<img src="/assets/images/Home/file.png" alt='file-icon'>
 						<div class='d-flex flex-column text-center'>
-							<p class='m-0 text-dark'><b>Drag your file here, or <i class='m-0 browse-button' (click)='browse()'>browse</i></b></p>
+							<p class='m-0 firefox__font text-dark'><b>Drag your file here, or <i class='m-0 browse-button' (click)='browse()'>browse</i></b></p>
 							<p class='m-0 small text-center text-dark'>supports .xlsx/excel files</p>
 							<input type='file' hidden #file (change)='validateFile($event.target.files[0])'>
 						</div>
