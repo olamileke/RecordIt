@@ -1,7 +1,48 @@
-# RecordIt
+### RecordIt
 
-To run this project locally, you need to have node installed. Get that at <a href='http://nodejs.org' target='blank'>nodejs.org</a>.
-You also need to have the Angular CLI installed globally to enable you create and run Angular projects. To install the Angular CLI, run
-npm install -g @angular/cli.
+------------
+PWA to mark chaplaincy meeting attendance for my service unit. View it [here](https://therecorditapp.netlify.app "here").
 
-Clone this repo by running git clone https://github.com/olamileke/recordit.git in a directory of choice on your local machine. After it is done cloning, cd into the /RecordIt directory and run npm install to install all the project dependencies found in the package.json file. Finally, run ng serve --open to open the app at localhost:4200 in the browser.
+To run this application locally, you must have node installed. Get that [here](https://nodejs.org "here"). You also need to have the Angular CLI installed. To do this, open up your terminal and run
+
+```
+npm install -g @angular/cli
+```
+
+This will install the latest version of the Angular CLI which will enable you to run Angular applications.
+
+Next up, navigate into the directory of your choice on your system and clone this repository by running
+
+```
+git clone https://github.com/olamileke/recordit.git
+```
+
+When cloning is complete, navigate into the application directory by running
+
+```
+cd RecordIt
+```
+
+At this point, we need to install all the packages needed by the app to run. Do this by running
+
+```
+npm install
+```
+
+This will install all the packages defined in the package.json file in the application root.
+
+Still in the terminal, run
+
+```
+ng serve
+```
+When the application is done compiling, access it at localhost:4200. Alternatively, you can specify the port you want the app to run at by adding a  port parameter like
+
+```
+ng serve --port 5000
+```
+Here the app will be available at localhost:5000.
+
+
+
+
